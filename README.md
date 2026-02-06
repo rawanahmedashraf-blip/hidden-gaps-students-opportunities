@@ -112,12 +112,18 @@ Key Attributes:
 * Longitudinal analysis over multiple academic years
 
   Contact Information
+  
+  
    Email:
+  
    rawanahmed.ashraf@gmail.com
    abeeradel872@gmail.com
    abdelrahmanabdelwahid03@gmail.com
    sharweedahmed330@gmail.com
-🔗 LinkedIn:
+
+  
+LinkedIn:
+
  https://www.linkedin.com/in/rawan-ahmed-038574264/
 https://www.linkedin.com/in/abeer-adel-07a71b327?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app
 http://linkedin.com/in/abdelrahman-osama-662a9124b
