@@ -1,0 +1,3 @@
+Metric,r,p,significant,Note
+Hours vs Acceptance,-0.094,0.1144,False,NEGATIVE + SIGNIFICANT — reverse causality confirmed
+Projects vs Acceptance,-0.081,0.1751,False,Negative trend — significant in LR
