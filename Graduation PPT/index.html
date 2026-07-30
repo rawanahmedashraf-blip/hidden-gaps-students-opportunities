@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE HIDDEN GAP — A Cinematic Data Story by Team Gaplens</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="film-header">
+    <div class="header-line"></div>
+    <span class="persistent-title">THE HIDDEN GAP</span>
+    <div class="header-line"></div>
+  </header>
+
+  <div id="black-curtain" class="curtain black-curtain"></div>
+  <div id="white-curtain" class="curtain white-curtain"></div>
+  <div id="optical-vignette"></div>
+  <div id="ambient-glow" class="ambient-glow"></div>
+  <canvas id="fx-canvas"></canvas>
+
+  <main id="viewport">
+
+    <!-- STAGE 1 — TITLE -->
+    <section id="stage-title" class="stage stage-active">
+      <div class="stage-inner" id="stage-title-inner">
+        <div class="student-wrap" id="rig-title">
+          <div class="student-rig">
+            <div class="char-head"><div class="char-visor"></div></div>
+            <div class="char-torso"><div class="char-backpack"></div></div>
+            <div class="char-legs">
+              <div class="leg leg-left"></div>
+              <div class="leg leg-right"></div>
+            </div>
+          </div>
+          <div class="rig-shadow"></div>
+        </div>
+
+        <div class="title-block">
+          <h1 class="line l-1">THE HIDDEN GAP</h1>
+          <p class="line l-1b subtitle-elegant">From Learning to Employment:<br>Discovering the Invisible Skill Gap in Egypt's Data Analytics Market</p>
+          <p class="line l-2 sub">Effort vs Opportunities in Data Analysis</p>
+          <p class="line l-3 sub-small">A Data-Driven Study of the Egyptian Job Market</p>
+          <div class="kpi-row line l-4">
+            <div class="kpi-chip"><span class="kpi-num">225</span><span class="kpi-lbl">Students</span></div>
+            <div class="kpi-chip"><span class="kpi-num">467</span><span class="kpi-lbl">Jobs</span></div>
+            <div class="kpi-chip"><span class="kpi-num">5</span><span class="kpi-lbl">Phases</span></div>
+          </div>
+          <p class="line l-5 team">Team Gaplens</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 2 — THE LATE-NIGHT ROOM -->
+    <section id="stage-room" class="stage">
+      <div class="stage-inner room-inner">
+
+        <div class="room-scene">
+          <div class="desk">
+            <div class="laptop">
+              <div class="laptop-screen"><div class="code-lines"></div></div>
+              <div class="laptop-base"></div>
+            </div>
+            <div class="coffee-cup"><div class="steam"></div><div class="steam s2"></div></div>
+            <div class="sticky-notes">
+              <div class="sticky s1">SQL</div>
+              <div class="sticky s2">Python</div>
+              <div class="sticky s3">Portfolio</div>
+            </div>
+          </div>
+
+          <div class="student-wrap sitting" id="rig-room">
+            <div class="student-rig sitting-rig">
+              <div class="char-head"><div class="char-visor"></div></div>
+              <div class="char-torso"></div>
+              <div class="char-arm" id="room-arm"></div>
+            </div>
+          </div>
+
+          <div class="wall-clock" id="wall-clock">
+            <div class="clock-face">
+              <div class="hand hour"></div>
+              <div class="hand minute"></div>
+            </div>
+            <span class="clock-label">11:58 PM</span>
+          </div>
+        </div>
+
+        <div class="effort-log" id="effort-log">
+          <div class="log-row" data-order="1"><span class="log-dot"></span> Course completed: <b>SQL Fundamentals</b></div>
+          <div class="log-row" data-order="2"><span class="log-dot"></span> Certificate earned: <b>Python for Data Analysis</b></div>
+          <div class="log-row" data-order="3"><span class="log-dot"></span> Project uploaded: <b>Sales Dashboard</b></div>
+          <div class="log-row" data-order="4"><span class="log-dot"></span> Study hours this week: <b id="hours-counter">0</b> hrs</div>
+        </div>
+
+        <div class="apps-tracker" id="apps-tracker">
+          <div class="apps-label">APPLICATIONS SENT</div>
+          <div class="apps-number" id="apps-number">0</div>
+          <div class="apps-bar"><div class="apps-fill" id="apps-fill"></div></div>
+        </div>
+
+        <div class="inbox-panel" id="inbox-panel">
+          <div class="inbox-title">INBOX</div>
+          <div class="inbox-empty" id="inbox-empty">No new messages</div>
+          <div class="inbox-msg reject" id="inbox-msg-1">Thank you for applying — we've decided to move forward with other candidates.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 3 — THE QUESTION -->
+    <section id="stage-question" class="stage">
+      <div class="stage-inner center-inner">
+        <div class="crowd-grid" id="crowd-grid"></div>
+        <div class="question-box">
+          <p class="question-line q1">If this student worked this hard...</p>
+          <p class="question-line q2 accent">Why didn't he get the opportunity?</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 4 — DATASET 1 -->
+    <section id="stage-dataset1" class="stage">
+      <div class="stage-inner">
+        <div class="scene-label">
+          <span class="scene-kicker">DATASET 1</span>
+          <h2 class="scene-title">The Student Survey</h2>
+        </div>
+
+        <div class="form-stream" id="form-stream">
+          <div class="form-card fc1"><div class="fc-icon">📋</div><div class="fc-text">Google Forms<br><span>225 Responses</span></div></div>
+          <div class="form-card fc2"><div class="fc-icon">❓</div><div class="fc-text">24 Questions</div></div>
+          <div class="form-card fc3"><div class="fc-icon">🧹</div><div class="fc-text">Data Cleaning<br><span>62 Columns</span></div></div>
+        </div>
+
+        <div class="sample-overview-panel" id="sample-overview-panel">
+          <div class="so-stat"><span class="so-num">46%</span><span class="so-lbl">Cairo/Alex</span></div>
+          <div class="so-stat"><span class="so-num">54%</span><span class="so-lbl">Provinces</span></div>
+          <div class="so-stat"><span class="so-num">65%</span><span class="so-lbl">Gov. Universities</span></div>
+          <div class="so-stat"><span class="so-num">95%</span><span class="so-lbl">Have ≥1 Basic Skill</span></div>
+        </div>
+
+        <div class="db-grid-reveal" id="db-grid-reveal">
+          <div class="db-row db-header">
+            <span>python_lvl</span><span>sql_lvl</span><span>hours</span><span>applied</span><span>accepted</span>
+          </div>
+          <div class="db-row"><span>3</span><span>2</span><span>12</span><span>7</span><span>0</span></div>
+          <div class="db-row"><span>2</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+          <div class="db-row"><span>4</span><span>1</span><span>15</span><span>10</span><span>0</span></div>
+          <div class="db-row fade-row"><span>…</span><span>…</span><span>…</span><span>…</span><span>…</span></div>
+        </div>
+
+        <div class="dataset-stamp" id="stamp-1">DATASET 1 COMPLETE</div>
+      </div>
+    </section>
+
+    <!-- STAGE 5 — DATASET 2 -->
+    <section id="stage-dataset2" class="stage">
+      <div class="stage-inner">
+        <div class="scene-label">
+          <span class="scene-kicker">DATASET 2</span>
+          <h2 class="scene-title">The Job Market</h2>
+        </div>
+
+        <div class="platform-row" id="platform-row">
+          <div class="platform-chip">Wuzzuf</div>
+          <div class="platform-chip">LinkedIn</div>
+          <div class="platform-chip">Forasna</div>
+        </div>
+
+        <div class="entry-level-callout" id="entry-level-callout">
+          Filtered to <b>Entry-Level Only</b> (0–3 years experience)<br>
+          <span>Comparing fresh graduates to senior roles creates false, misleading gaps.</span>
+        </div>
+
+        <div class="ai-pipeline" id="ai-pipeline">
+          <div class="pipe-node pn1"><span class="pn-title">467 Job Posts</span><span class="pn-sub">Raw Descriptions</span></div>
+          <div class="pipe-arrow"><div class="pipe-flow"></div></div>
+          <div class="pipe-node pn2 highlight-node"><span class="pn-title">n8n Automation</span><span class="pn-sub">Workflow Engine</span></div>
+          <div class="pipe-arrow"><div class="pipe-flow"></div></div>
+          <div class="pipe-node pn3 highlight-node"><span class="pn-title">Claude AI</span><span class="pn-sub">Skill Extraction</span></div>
+        </div>
+
+        <div class="terminal-box" id="terminal-box">
+          <div class="term-line" data-order="1">&gt; parsing job descriptions... <span class="ok">[OK]</span></div>
+          <div class="term-line" data-order="2">&gt; routing via n8n webhook... <span class="ok">[OK]</span></div>
+          <div class="term-line" data-order="3">&gt; extracting skills with Claude... <span class="ok">[OK]</span></div>
+          <div class="term-line" data-order="4">&gt; accuracy: <span class="ok">95%</span></div>
+        </div>
+
+        <div class="job-fields-panel" id="job-fields-panel">
+          <span>python_required</span><span>sql_required</span><span>excel_required</span>
+          <span>tableau_required</span><span>powerbi_required</span><span>ml_required</span>
+          <span>experience_years</span><span>remote_option</span><span>domain_knowledge</span>
+        </div>
+
+        <div class="dataset-stamp" id="stamp-2">DATASET 2 COMPLETE</div>
+      </div>
+    </section>
+
+    <!-- STAGE 6 — COLLISION -->
+    <section id="stage-collide" class="stage">
+      <div class="stage-inner center-inner">
+        <div class="galaxy galaxy-left" id="galaxy-left">
+          <span>225<br><small>STUDENTS</small></span>
+        </div>
+        <div class="galaxy galaxy-right" id="galaxy-right">
+          <span>467<br><small>JOBS</small></span>
+        </div>
+        <div class="collision-flash" id="collision-flash"></div>
+        <p class="collide-caption" id="collide-caption">Now, we compare reality with expectation.</p>
+      </div>
+    </section>
+
+    <!-- STAGE 7 — SKILL GAP -->
+    <section id="stage-gap" class="stage">
+      <div class="stage-inner">
+        <div class="scene-label">
+          <span class="scene-kicker">FINDING 1</span>
+          <h2 class="scene-title">The Skill Mismatch</h2>
+        </div>
+
+        <div class="gap-chart" id="gap-chart">
+          <div class="gap-row" data-skill="SQL" data-gap="-28">
+            <span class="gap-name">SQL</span>
+            <div class="gap-track"><div class="gap-fill shortage" style="--w:34%"></div><div class="gap-marker" style="--m:62%"></div></div>
+            <span class="gap-value shortage">-28% shortage</span>
+          </div>
+          <div class="gap-row" data-skill="Power BI" data-gap="-23">
+            <span class="gap-name">Power BI</span>
+            <div class="gap-track"><div class="gap-fill shortage" style="--w:22%"></div><div class="gap-marker" style="--m:45%"></div></div>
+            <span class="gap-value shortage">-23% shortage</span>
+          </div>
+          <div class="gap-row" data-skill="Statistics" data-gap="-19">
+            <span class="gap-name">Statistics</span>
+            <div class="gap-track"><div class="gap-fill shortage" style="--w:42%"></div><div class="gap-marker" style="--m:61%"></div></div>
+            <span class="gap-value shortage">-19% shortage</span>
+          </div>
+          <div class="gap-row" data-skill="Python" data-gap="22">
+            <span class="gap-name">Python</span>
+            <div class="gap-track"><div class="gap-fill oversupply" style="--w:68%"></div><div class="gap-marker" style="--m:46%"></div></div>
+            <span class="gap-value oversupply">+22% oversupplied</span>
+          </div>
+          <div class="gap-row" data-skill="ML" data-gap="22">
+            <span class="gap-name">Machine Learning</span>
+            <div class="gap-track"><div class="gap-fill oversupply" style="--w:61%"></div><div class="gap-marker" style="--m:39%"></div></div>
+            <span class="gap-value oversupply">+22% oversupplied</span>
+          </div>
+          <div class="gap-legend">
+            <span><i class="dot blue"></i> Student Supply</span>
+            <span><i class="dot line"></i> Market Demand</span>
+          </div>
+        </div>
+
+        <p class="finding-caption" id="gap-caption">Students are learning what is popular — not what the market needs.</p>
+      </div>
+    </section>
+
+    <!-- STAGE 8 — EFFORT VS RESULTS -->
+    <section id="stage-effort" class="stage">
+      <div class="stage-inner">
+        <div class="scene-label">
+          <span class="scene-kicker">FINDING 2</span>
+          <h2 class="scene-title">Effort vs Results</h2>
+        </div>
+
+        <div class="effort-graph-wrap">
+          <div class="graph-y-axis"><span>70%</span><span>50%</span><span>30%</span></div>
+          <div class="graph-area">
+            <svg class="effort-svg" viewBox="0 0 800 300" preserveAspectRatio="none">
+              <path id="effort-line-glow" class="effort-line-glow" d="M 40,50 L 280,140 L 520,175 L 760,230" />
+              <path id="effort-line" class="effort-line" d="M 40,50 L 280,140 L 520,175 L 760,230" />
+              <circle class="pt" id="pt1" cx="40" cy="50" r="7"/>
+              <circle class="pt" id="pt2" cx="280" cy="140" r="7"/>
+              <circle class="pt" id="pt3" cx="520" cy="175" r="7"/>
+              <circle class="pt" id="pt4" cx="760" cy="230" r="7"/>
+            </svg>
+            <div class="callout c1" id="callout1"><b>61.5%</b><span>&lt; 2 hrs/week</span></div>
+            <div class="callout c2" id="callout2"><b>46.1%</b><span>2–5 hrs/week</span></div>
+            <div class="callout c3" id="callout3"><b>42.1%</b><span>5–10 hrs/week</span></div>
+            <div class="callout c4" id="callout4"><b>30.8%</b><span>10+ hrs/week</span></div>
+          </div>
+        </div>
+
+        <div class="stat-strip" id="stat-strip">
+          <div class="stat-pill">r = −0.151</div>
+          <div class="stat-pill">p = 0.041 ✅</div>
+        </div>
+
+        <p class="finding-caption" id="effort-caption">More effort did <b>not</b> create more opportunity.</p>
+      </div>
+    </section>
+
+    <!-- STAGE 9 — CONVERSION FUNNEL -->
+    <section id="stage-funnel" class="stage">
+      <div class="stage-inner">
+        <div class="scene-label">
+          <span class="scene-kicker">FINDING 3</span>
+          <h2 class="scene-title">The Conversion Funnel</h2>
+        </div>
+
+        <div class="funnel-wrap" id="funnel-wrap">
+          <div class="funnel-row" data-w="100"><span class="fn-label">Total Students</span><div class="fn-bar"><div class="fn-fill"></div></div><span class="fn-val">225 (100%)</span></div>
+          <div class="funnel-row" data-w="95"><span class="fn-label">Has Basic Skills</span><div class="fn-bar"><div class="fn-fill"></div></div><span class="fn-val">214 (95%)</span></div>
+          <div class="funnel-row" data-w="82"><span class="fn-label">Applied to Jobs</span><div class="fn-bar"><div class="fn-fill"></div></div><span class="fn-val">185 (82%)</span></div>
+          <div class="funnel-row danger" data-w="37"><span class="fn-label">Got Accepted</span><div class="fn-bar"><div class="fn-fill"></div></div><span class="fn-val">83 (37%)</span></div>
+        </div>
+
+        <div class="drop-flag" id="drop-flag">55% drop happens AFTER applying</div>
+      </div>
+    </section>
+
+    <!-- STAGE 10 — STATISTICAL TESTS -->
+    <section id="stage-stats" class="stage">
+      <div class="stage-inner">
+        <div class="scene-label">
+          <span class="scene-kicker">FINDING 4</span>
+          <h2 class="scene-title">What Actually Matters</h2>
+        </div>
+        <div class="stats-framework" id="stats-framework">
+          <div class="stat-tier confirmed" id="stat-confirmed">
+            <span class="tier-badge">✅ Confirmed</span>
+            <p>Study Hours — <b>p = 0.041</b> — hurts when undirected</p>
+          </div>
+          <div class="stat-tier underpowered" id="stat-underpowered">
+            <span class="tier-badge">⚠️ Underpowered</span>
+            <p>Mentor Contact — <b>OR = 1.32, p = 0.468</b></p>
+          </div>
+          <div class="stat-tier null" id="stat-null">
+            <span class="tier-badge">❌ Confirmed Null</span>
+            <p>University Type (p=0.52) · Location (p=0.74)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 11 — STUDENT PERSONAS -->
+    <section id="stage-personas" class="stage">
+      <div class="stage-inner">
+        <div class="scene-label">
+          <span class="scene-kicker">FINDING 5</span>
+          <h2 class="scene-title">Four Students. One Destination.</h2>
+        </div>
+
+        <div class="persona-row" id="persona-row">
+          <div class="persona-card" data-acc="36.1%">
+            <div class="persona-avatar p1"></div>
+            <span class="persona-name">Power User</span>
+            <span class="persona-detail">Kaggle · Power BI · Portfolio</span>
+            <span class="persona-acc">36.1%</span>
+          </div>
+          <div class="persona-card" data-acc="39.0%">
+            <div class="persona-avatar p2"></div>
+            <span class="persona-name">High Achiever</span>
+            <span class="persona-detail">Python · Power BI</span>
+            <span class="persona-acc">39.0%</span>
+          </div>
+          <div class="persona-card" data-acc="35.0%">
+            <div class="persona-avatar p3"></div>
+            <span class="persona-name">Beginner</span>
+            <span class="persona-detail">Entry-level basics</span>
+            <span class="persona-acc">35.0%</span>
+          </div>
+          <div class="persona-card" data-acc="34.8%">
+            <div class="persona-avatar p4"></div>
+            <span class="persona-name">Excel-Only</span>
+            <span class="persona-detail">Excel specialist</span>
+            <span class="persona-acc">34.8%</span>
+          </div>
+        </div>
+
+        <p class="finding-caption" id="persona-caption">Different paths. Almost the same destination.</p>
+      </div>
+    </section>
+
+    <!-- STAGE 12 — DASHBOARD -->
+    <section id="stage-dashboard" class="stage">
+      <div class="stage-inner">
+        <div class="scene-label">
+          <span class="scene-kicker">THE DASHBOARD</span>
+          <h2 class="scene-title">Six Sheets. One Story.</h2>
+        </div>
+        <div class="dashboard-sheets" id="dashboard-sheets">
+          <div class="dash-sheet" id="dash-sheet-1">Overview — KPIs &amp; Demographics</div>
+          <div class="dash-sheet" id="dash-sheet-2">Skill Gap — Demand vs Supply</div>
+          <div class="dash-sheet" id="dash-sheet-3">Effort vs Results — Correlation &amp; Funnel</div>
+          <div class="dash-sheet" id="dash-sheet-4">Student Personas — KMeans Profiles</div>
+          <div class="dash-sheet" id="dash-sheet-5">Perception vs Reality</div>
+          <div class="dash-sheet" id="dash-sheet-6">Recommendations — Action Plan</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 13 — RECOMMENDATIONS -->
+    <section id="stage-recs" class="stage">
+      <div class="stage-inner">
+        <div class="scene-label">
+          <span class="scene-kicker">THE PLAN</span>
+          <h2 class="scene-title">Five Missions Forward</h2>
+        </div>
+
+        <div class="mission-list" id="mission-list">
+          <div class="mission" data-n="1"><span class="mission-num">01</span><span class="mission-name">Close the SQL Gap</span></div>
+          <div class="mission" data-n="2"><span class="mission-num">02</span><span class="mission-name">Teach Power BI &amp; Tableau</span></div>
+          <div class="mission" data-n="3"><span class="mission-num">03</span><span class="mission-name">Guided Learning Paths</span></div>
+          <div class="mission" data-n="4"><span class="mission-num">04</span><span class="mission-name">Structured Mentorship</span></div>
+          <div class="mission" data-n="5"><span class="mission-num">05</span><span class="mission-name">Real Capstone Projects</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE 14 — RESOLUTION -->
+    <section id="stage-final" class="stage">
+      <div class="stage-inner center-inner">
+
+        <div class="sunrise-scene" id="sunrise-scene">
+          <div class="sun"></div>
+          <div class="horizon"></div>
+          <div class="student-wrap walking" id="rig-final">
+            <div class="student-rig">
+              <div class="char-head hopeful"><div class="char-visor"></div></div>
+              <div class="char-torso"><div class="char-backpack"></div></div>
+              <div class="char-legs">
+                <div class="leg leg-left"></div>
+                <div class="leg leg-right"></div>
+              </div>
+            </div>
+          </div>
+          <div class="dissolving-rejects" id="dissolving-rejects">
+            <span>Rejected</span><span>No response</span><span>Position filled</span>
+          </div>
+        </div>
+
+        <blockquote class="final-quote" id="final-quote">
+          <span class="quote-line qline-1">"The problem was never students' effort.</span><br>
+          <span class="quote-line qline-2 accent">The problem was the hidden gap between learning and opportunity."</span>
+        </blockquote>
+
+        <div class="credits-team" id="credits-team">
+          <div class="team-member" id="team-member-1">
+            <span class="member-name">Rawan Ahmed</span>
+            <span class="member-role">Project Lead &amp; Data Analyst</span>
+          </div>
+          <div class="team-member" id="team-member-2">
+            <span class="member-name">Abdelrahman Osama</span>
+            <span class="member-role">Data Engineer &amp; Automation</span>
+          </div>
+          <div class="team-member" id="team-member-3">
+            <span class="member-name">Abeer Adel</span>
+            <span class="member-role">BI Developer</span>
+          </div>
+          <div class="team-member" id="team-member-4">
+            <span class="member-name">Ahmed Fawzy</span>
+            <span class="member-role">Data Curator</span>
+          </div>
+        </div>
+
+        <div class="credits" id="credits">
+          <div class="logo-mark"><span class="ring"></span><span class="core"></span></div>
+          <h2>THE HIDDEN GAP</h2>
+          <p class="team-name">Graduation Project 2026</p>
+        </div>
+
+        <p class="thank-you" id="thank-you-line">Thank You</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
